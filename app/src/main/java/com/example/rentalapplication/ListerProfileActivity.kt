@@ -15,16 +15,31 @@ class ListerProfileActivity : AppCompatActivity() {
     var databaseReference : DatabaseReference? = null
     var database : FirebaseDatabase? = null
 
+    lateinit var txtName: TextView
+    lateinit var txtEmail: TextView
+    lateinit var txtPhone: TextView
+    lateinit var txtAddress: TextView
+    lateinit var txtNic:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lister_profile)
 
+        txtName=findViewById(R.id.tvListerName)
+        txtEmail=findViewById(R.id.tvListerEmail)
+        txtPhone=findViewById(R.id.tvListerPhone)
+        txtAddress=findViewById(R.id.tvListerAddress)
+        txtNic=findViewById(R.id.tvListerNIC)
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        databaseReference = database?.reference!!.child("profile")
+        databaseReference = database?.reference!!.child("lister")
+
+        loadListerProfile()
     }
 
     private fun loadListerProfile(){
+
 
         val logout = findViewById<ImageButton>(R.id.listerLogOutButton)
         val lister = auth.currentUser
@@ -32,19 +47,14 @@ class ListerProfileActivity : AppCompatActivity() {
 
         listerReference?.addValueEventListener(object: ValueEventListener{
 
-            val tvListerName= findViewById<TextView>(R.id.tvListerName)
-            val tvListerNIC = findViewById<TextView>(R.id.tvListerNIC)
-            val tvListerEmail = findViewById<TextView>(R.id.tvListerEmail)
-            val tvListerPhone = findViewById<TextView>(R.id.tvListerPhone)
-            val tvListerAddress =findViewById<TextView>(R.id.tvListerAddress)
 
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                tvListerName.text = snapshot.child("listerName").value.toString()
-                tvListerEmail.text = snapshot.child("email").value.toString()
-                tvListerNIC.text = snapshot.child("nic").value.toString()
-                tvListerAddress.text = snapshot.child("address").value.toString()
-                tvListerPhone.text =snapshot.child("phone").value.toString()
+                txtName.text = snapshot.child("listerName").value.toString()
+                txtEmail.text = snapshot.child("email").value.toString()
+                txtNic.text = snapshot.child("nic").value.toString()
+                txtAddress.text = snapshot.child("address").value.toString()
+                txtPhone.text =snapshot.child("phone").value.toString()
             }
 
             override fun onCancelled(error: DatabaseError) {

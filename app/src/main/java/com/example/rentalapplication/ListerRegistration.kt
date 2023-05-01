@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.TestLooperManager
 import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import org.w3c.dom.Text
@@ -56,13 +60,30 @@ class ListerRegistration : AppCompatActivity() {
                 else if(TextUtils.isEmpty(editListerPassword.text.toString())){
                     edtListerEmail.error="Please Enter Password"
                     return@setOnClickListener
+                }else if(!Patterns.EMAIL_ADDRESS.matcher(edtListerEmail.text.toString()).matches()){
+                    edtListerEmail.error="Valid Email is Required!"
+                    return@setOnClickListener
+                }else if(TextUtils.isEmpty(editListerPhone.text.toString())){
+                    editListerPhone.error="Please Enter Phone Number"
+                    return@setOnClickListener
+                }else if(editListerPassword.text.toString().length < 6){
+                    editListerPassword.error="Password Should have at least 6 characters"
+                    return@setOnClickListener
+                }else if(editListerRePassword.text.toString().length < 6){
+                    editListerRePassword.error="Please Enter conform password"
+                    return@setOnClickListener
+                }else if(editListerPassword.text.toString() != editListerRePassword.text.toString()){
+                    editListerRePassword.error="Password doesn't match"
+                    return@setOnClickListener
                 }
+
+
             var email = edtListerEmail.text.toString()
             var password = editListerPassword.text.toString()
 
             auth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener {
-                    if(it.isSuccessful){
+                .addOnCompleteListener(this) { task ->
+                    if(task.isSuccessful){
                         val currentLister = auth.currentUser
                         val currentListerDb = databaseReference?.child((currentLister?.uid!!))
                         currentListerDb?.child("listerName")?.setValue(edtListerName.text.toString())
@@ -71,43 +92,33 @@ class ListerRegistration : AppCompatActivity() {
                         currentListerDb?.child("address")?.setValue(editListerAddress.text.toString())
                         currentListerDb?.child("email")?.setValue(edtListerEmail.text.toString())
 
+//                        currentLister?.sendEmailVerification()
+
                         Toast.makeText(this@ListerRegistration, "Registration Success",Toast.LENGTH_LONG).show()
                         finish()
 
                     }else{
-                        Toast.makeText(this@ListerRegistration, "Registration failed, please try again",Toast.LENGTH_LONG).show()
+                        try {
+                            throw task.exception!!
+                        } catch (e: FirebaseAuthWeakPasswordException) {
+                            editListerPassword.error = "Your password is too Weak. Kindly use a mix of alphabets, numbers and special characters"
+                            editListerPassword.requestFocus()
+                        } catch (e: FirebaseAuthInvalidCredentialsException) {
+                            edtListerEmail.error = "Your email is invalid or already in use. Kindly re-enter."
+                            edtListerEmail.requestFocus()
+                        } catch (e: FirebaseAuthUserCollisionException) {
+                            edtListerEmail.setError("User is already registered with this email. Use another email.")
+                            edtListerEmail.requestFocus()
+                        } catch (e: Exception) {
+//                   
+
+                            Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+                        }
 
                     }
+
                 }
 
-//            var email = edtListerEmail.text.toString().trim()
-//            var password = editListerPassword.text.toString().trim()
-//
-//            auth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this) { task ->
-//                    if (task.isSuccessful) {
-//                        // Sign in success, update UI with the signed-in user's information
-//
-//                        val currentLister = auth.currentUser
-//                        val currentListerDb = databaseReference?.child((currentLister?.uid!!))
-//                        currentListerDb?.child("listerName")?.setValue(edtListerName.text.toString())
-//                        currentListerDb?.child("phone")?.setValue(editListerPhone.text.toString())
-//                        currentListerDb?.child("nic")?.setValue(editListerNic.text.toString())
-//                        currentListerDb?.child("address")?.setValue(editListerAddress.text.toString())
-//                        currentListerDb?.child("email")?.setValue(edtListerEmail.text.toString())
-//                        Toast.makeText(this@ListerRegistration, "Registration Success",Toast.LENGTH_LONG).show()
-//                        finish()
-//                    } else {
-//                        // If sign in fails, display a message to the user.
-//
-//                        Toast.makeText(
-//                            baseContext,
-//                            "Authentication failed.",
-//                            Toast.LENGTH_SHORT,
-//                        ).show()
-//
-//                    }
-//                }
         }
 
     }
