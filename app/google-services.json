@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "7772687796",
+    "firebase_url": "https://travelodge-e6586-default-rtdb.firebaseio.com",
+    "project_id": "travelodge-e6586",
+    "storage_bucket": "travelodge-e6586.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7772687796:android:3033265dcdfdf1f44c76e1",
+        "android_client_info": {
+          "package_name": "com.example.rentalapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7772687796-p55riivitvem24tlrspbd2vgrvg471cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYYuCxvQdJWvtGR6Au8eoB49RaT6vRQyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7772687796-p55riivitvem24tlrspbd2vgrvg471cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

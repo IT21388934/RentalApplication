@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <View
+        android:id="@+id/viewHeaderBackground"
+        android:layout_width="412dp"
+        android:layout_height="383dp"
+        android:background="@color/dashboard_item_4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
+    <TextView
+        android:id="@+id/tvTitleListerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/tvTitleListerProfile"
+        android:textColor="@color/background"
+
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewHeaderBackground" />
+
+    <TextView
+        android:id="@+id/tvListerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvListerName"
+        android:textColor="@color/background"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+
+    <TextView
+        android:id="@+id/tvListerEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/secondary_text"
+        android:text="@string/tvListerEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLblLiseterEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvLblLiseterEmail"
+        app:layout_constraintTop_toTopOf="@+id/tvLblLiseterEmail"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/tvLblLiseterEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvLblListerEmail"
+        android:textColor="@color/MidBlack"
+        android:textSize="@dimen/primary_text"
+        app:layout_constraintEnd_toStartOf="@+id/tvListerEmail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvListerDis" />
+
+    <TextView
+        android:id="@+id/tvLblListerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvLblListerPhone"
+        android:textColor="@color/MidBlack"
+        android:textSize="@dimen/primary_text"
+        app:layout_constraintStart_toStartOf="@+id/tvLblListerNIC"
+        app:layout_constraintTop_toBottomOf="@+id/tvLblListerNIC" />
+
+    <TextView
+        android:id="@+id/tvListerNIC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvListerNIC"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/secondary_text"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLblListerNIC"
+        app:layout_constraintEnd_toEndOf="@+id/tvListerEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvLblListerNIC"
+        app:layout_constraintTop_toTopOf="@+id/tvLblListerNIC"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvLblListerNIC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvLblListerNIC"
+        android:textColor="@color/MidBlack"
+        android:textSize="@dimen/primary_text"
+        app:layout_constraintStart_toStartOf="@+id/tvLblLiseterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvLblLiseterEmail" />
+
+    <TextView
+        android:id="@+id/tvListerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/secondary_text"
+        android:text="@string/tvListerPhone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLblListerPhone"
+        app:layout_constraintEnd_toEndOf="@+id/tvListerNIC"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvLblListerPhone"
+        app:layout_constraintTop_toTopOf="@+id/tvLblListerPhone"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvListerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/secondary_line_gap"
+        android:text="@string/tvListerAddress"
+        android:textColor="@color/background"
+        app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@+id/tvListerName" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleListerProfile"
+        app:shapeAppearance="@style/circular"
+        app:srcCompat="@drawable/listerdp"
+        app:strokeColor="@color/dashboard_item_2"
+        app:strokeWidth="5dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvRating"
+
+        android:textColor="@color/background"
+        app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/tvListerDis"
+        android:layout_width="292dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/secondary_text"
+        android:text="@string/tvListerDes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/tvLblListerDes"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/primary_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvListerDis"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackground" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/viewFooterBackground"
+        android:layout_width="413dp"
+        android:layout_height="60dp"
+        android:background="@color/dashboard_item_4"
+        app:backgroundTint="@color/dashboard_item_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearance="@style/borderRound10"
+        tools:ignore="BottomAppBar,ExtraText,MissingConstraints"
+        tools:layout_editor_absoluteX="-3dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/viewFooterBackground">
+
+        <ImageView
+            android:id="@+id/reservationList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/booking" />
+
+        <ImageView
+            android:id="@+id/places"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+        <ImageView
+            android:id="@+id/addPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_add_location_alt_24" />
+
+        <ImageView
+            android:id="@+id/editProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+        <ImageView
+            android:id="@+id/deleteProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvLblNoOfListings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/secondary_line_gap"
+        android:text="@string/tvLblNoOfListings"
+        android:textColor="@color/MidBlack"
+        android:textSize="@dimen/primary_text"
+        app:layout_constraintStart_toStartOf="@+id/tvLblListerPhone"
+        app:layout_constraintTop_toBottomOf="@+id/tvLblListerPhone"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textNoOfListing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/secondary_text"
+        android:text="@string/tvNoOfListings"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLblNoOfListings"
+        app:layout_constraintEnd_toEndOf="@+id/tvListerPhone"
+        app:layout_constraintTop_toTopOf="@+id/tvLblNoOfListings" />
+
+    <ImageButton
+        android:id="@+id/listerLogOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/dashboard_item_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoutbtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">RentalApplication</string>
+
+    <!--    //Lister Profile-->
+    <string name="tvTitleListerProfile">LISTER PROFILE</string>
+    <string name="tvLblListerName">Name</string>
+    <string name="tvLblListerEmail">Email</string>
+    <string name="tvLblListerPhone">Phone</string>
+    <string name="tvLblListerNIC">NIC</string>
+    <string name="tvLblListerAddress">Address</string>
+    <string name="tvLblPassword">Password</string>
+    <string name="tvListerName">Palitha Silva</string>
+    <string name="tvListerEmail">palitha@gmail.com</string>
+    <string name="tvListerPhone">+94 779090909</string>
+    <string name="tvListerNIC">19887787989</string>
+    <string name="tvListerAddress">65,Temple Road, Gampaha, Sri Lanka</string>
+    <string name="tvPassword">............</string>
+    <string name="tvRating">4.70</string>
+    <string name="tvLblListerDes">About Me</string>
+    <string name="tvLblNoOfListings">No of Listings</string>
+    <string name="tvNoOfListings">3</string>
+    <string name="tvListerDes">I am palitha, the owner of the riverside villa. I have 10-year experience as a tourist guide.  </string>
+
+    <!--    //lister Registration page-->
+    <string name="tvTitleListerProfileUpdate">UPDATE PROFILE</string>
+    <string name="edtListerName">Your Name</string>
+    <string name="editListerEmail">Your Email</string>
+    <string name="editListerPhone">Your Phone</string>
+    <string name="editListerNIC">Your NIC</string>
+    <string name="editListerAddress">Your Address</string>
+    <string name="editListerDes">Short Description about you. (max: 15 words)</string>
+    <string name="bntClear">Clear All Inputs</string>
+    <string name="edtPassword">Password</string>
+    <string name="edtRePassword">Re Enter Password</string>
+
+
+    <!--    //Login-->
+    <string name="tvListerLogin">Lister Login</string>
+    <string name="edtLoginEmail">User Email</string>
+    <string name="edtLoginPassword">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="directListerToSingUp">Do not have Lister Account ? </string>
+
+    <!--    //common-->
+    <string name="btnSubmit">Submit</string>
+    <string name="btnCancel">Cancel</string>
+
+    <!--    //lister update-->
+    <string name="tvListerProUpdate">Update Lister Profile</string>
+    <string name="tvChangePassword">Change Password</string>
+
+    <!--    //reservations page-->
+    <string name="tvReservations">Reservations</string>
+    <string name="tvPlace">Riverside villa, Kaluthara</string>
+    <string name="tvCheckInData">16/12/23</string>
+    <string name="tvDash">-</string>
+    <string name="tvCheck0utData">20/12/23</string>
+    <string name="tvLblNoOfRooms">No of Rooms</string>
+    <string name="tvforworDash">/</string>
+    <string name="NoOfRooms">3</string>
+    <string name="tvListingId">LS24322234</string>
+
+
+</resources>

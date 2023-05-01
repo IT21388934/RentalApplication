@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/viewHeaderBackgroundLiReg"
+        android:layout_width="412dp"
+        android:layout_height="100dp"
+        android:background="@color/dashboard_item_4"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvReservations"
+        android:textAllCaps="true"
+        android:textColor="@color/background"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackgroundLiReg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewHeaderBackgroundLiReg"
+        tools:layout_editor_absoluteY="36dp"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="629dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="101dp"
+        android:padding="8dp"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                        app:layout_constraintTop_toTopOf="@+id/textView15"
+                        tools:layout_editor_absoluteX="216dp" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="@+id/textView14"
+                        tools:layout_editor_absoluteX="200dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        tools:layout_editor_absoluteX="216dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="17dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        tools:layout_editor_absoluteX="216dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="17dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        tools:layout_editor_absoluteX="216dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="17dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        tools:layout_editor_absoluteX="216dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="17dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                app:shapeAppearance="@style/borderRound10"
+                android:id="@+id/viewContentBackground"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_light_background"
+                android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tvPlace"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:layout_conversion_absoluteHeight="19dp"
+                        tools:layout_conversion_absoluteWidth="158dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheckInData"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCheck0utData"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvDash"
+                        tools:layout_editor_absoluteX="91dp"
+                        tools:layout_editor_absoluteY="41dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NoOfRooms"
+                        tools:layout_editor_absoluteX="111dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvLblNoOfRooms"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="65dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvListingId"
+                        tools:layout_editor_absoluteX="216dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvforworDash"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="17dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView><com.google.android.material.card.MaterialCardView
+            app:shapeAppearance="@style/borderRound10"
+            android:id="@+id/viewContentBackground"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_height="100dp"
+            android:background="@color/cardview_light_background"
+            android:outlineAmbientShadowColor="@color/cardview_shadow_end_color" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tvPlace"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    tools:layout_conversion_absoluteHeight="19dp"
+                    tools:layout_conversion_absoluteWidth="158dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvCheckInData"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="41dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvCheck0utData"
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="41dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvDash"
+                    tools:layout_editor_absoluteX="91dp"
+                    tools:layout_editor_absoluteY="41dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NoOfRooms"
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="65dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvLblNoOfRooms"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="65dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvListingId"
+                    tools:layout_editor_absoluteX="216dp"
+                    tools:layout_editor_absoluteY="17dp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvforworDash"
+                    tools:layout_editor_absoluteX="200dp"
+                    tools:layout_editor_absoluteY="17dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
