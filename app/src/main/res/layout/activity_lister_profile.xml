@@ -234,7 +234,7 @@
             app:srcCompat="@drawable/ic_baseline_add_location_alt_24" />
 
         <ImageView
-            android:id="@+id/editProfile"
+            android:id="@+id/btnEditProfile"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="15dp"

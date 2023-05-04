@@ -11,6 +11,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackgroundLiUpdate"
         app:layout_constraintVertical_bias="0.0"
@@ -101,58 +102,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/editListerPhone"
                 tools:layout_editor_absoluteX="0dp" />
 
+
             <EditText
                 android:id="@+id/editListerAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:hint="@string/editListerAddress"
                 android:textSize="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/editListerNic"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="375dp" />
-
-            <EditText
-                android:id="@+id/editListerPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:hint="@string/edtPassword"
-                android:textSize="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/editListerAddress"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <EditText
-                android:id="@+id/editListerRePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:hint="@string/edtRePassword"
-                android:textSize="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/editListerPassword"
-                tools:layout_editor_absoluteX="0dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editListerNic" />
 
             <EditText
                 android:id="@+id/editListerDes"
                 android:layout_width="381dp"
                 android:layout_height="76dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
                 android:hint="@string/editListerDes"
                 android:textSize="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editListerRePassword" />
+                app:layout_constraintTop_toBottomOf="@+id/editListerAddress"
+                tools:layout_editor_absoluteX="16dp" />
 
             <Button
-                android:id="@+id/listerRegisBtn"
+                    android:id="@+id/listerUpdateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -163,6 +138,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+            <Button
+                android:id="@+id/btnCancelUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/primary"
+                android:text="@string/btnCancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listerUpdateBtn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

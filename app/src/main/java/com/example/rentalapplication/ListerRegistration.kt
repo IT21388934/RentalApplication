@@ -45,6 +45,7 @@ class ListerRegistration : AppCompatActivity() {
         var editListerPhone = findViewById<EditText>(R.id.editListerPhone)
         var editListerNic =findViewById<EditText>(R.id.editListerNic)
         var editListerAddress =findViewById<EditText>(R.id.editListerAddress)
+        var editDes =findViewById<EditText>(R.id.editListerDes)
 
 
 
@@ -91,6 +92,7 @@ class ListerRegistration : AppCompatActivity() {
                         currentListerDb?.child("nic")?.setValue(editListerNic.text.toString())
                         currentListerDb?.child("address")?.setValue(editListerAddress.text.toString())
                         currentListerDb?.child("email")?.setValue(edtListerEmail.text.toString())
+                        currentListerDb?.child("description")?.setValue(editDes.text.toString())
 
 //                        currentLister?.sendEmailVerification()
 
@@ -107,10 +109,10 @@ class ListerRegistration : AppCompatActivity() {
                             edtListerEmail.error = "Your email is invalid or already in use. Kindly re-enter."
                             edtListerEmail.requestFocus()
                         } catch (e: FirebaseAuthUserCollisionException) {
-                            edtListerEmail.setError("User is already registered with this email. Use another email.")
+                            edtListerEmail.error=("User is already registered with this email. Use another email.")
                             edtListerEmail.requestFocus()
                         } catch (e: Exception) {
-//                   
+//
 
                             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
                         }

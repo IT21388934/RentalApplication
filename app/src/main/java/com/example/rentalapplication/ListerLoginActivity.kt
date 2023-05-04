@@ -44,8 +44,8 @@ class ListerLoginActivity : AppCompatActivity() {
             }else if(TextUtils.isEmpty(editTxtPassword.text.toString())){
                 editTxtPassword.error="Please enter password"
                 return@setOnClickListener
-            } else if(!Patterns.EMAIL_ADDRESS.matcher(editTxtPassword.text.toString()).matches()){
-                editTxtPassword.error="Valid Email is Required!"
+            } else if(!Patterns.EMAIL_ADDRESS.matcher(edtLoginEmail.text.toString()).matches()){
+                edtLoginEmail.error="Valid Email is Required!"
                 return@setOnClickListener
             }
 
