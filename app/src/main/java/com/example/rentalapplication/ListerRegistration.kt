@@ -37,6 +37,8 @@ class ListerRegistration : AppCompatActivity() {
     }
 
     private fun listerRegis(){
+
+        //initialize variables
         var listerRegisButton = findViewById<Button>(R.id.listerRegisBtn)
         var edtListerName = findViewById<EditText>(R.id.edtListerName)
         var edtListerEmail = findViewById<EditText>(R.id.edtListerEmail)
@@ -48,7 +50,7 @@ class ListerRegistration : AppCompatActivity() {
         var editDes =findViewById<EditText>(R.id.editListerDes)
 
 
-
+        //inputs validation
         listerRegisButton.setOnClickListener {
 
                 if(TextUtils.isEmpty(edtListerName.text.toString())){
@@ -82,10 +84,13 @@ class ListerRegistration : AppCompatActivity() {
             var email = edtListerEmail.text.toString()
             var password = editListerPassword.text.toString()
 
+            //set firebase auth
+
             auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this) { task ->
                     if(task.isSuccessful){
                         val currentLister = auth.currentUser
+                        //create  lister profile
                         val currentListerDb = databaseReference?.child((currentLister?.uid!!))
                         currentListerDb?.child("listerName")?.setValue(edtListerName.text.toString())
                         currentListerDb?.child("phone")?.setValue(editListerPhone.text.toString())
@@ -98,7 +103,7 @@ class ListerRegistration : AppCompatActivity() {
 
                         Toast.makeText(this@ListerRegistration, "Registration Success",Toast.LENGTH_LONG).show()
                         finish()
-
+                        //handle exception
                     }else{
                         try {
                             throw task.exception!!
