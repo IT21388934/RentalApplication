@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MAD_Project</string>
+    <string name="register"><u>Register</u></string>
+    <string name="click_here_to_reset"><u>Click here to reset</u></string>
+    <string name="user_display_picture" />
+    <string name="loading" />
+    <string name="registered_user_since" />
+    <string name="mobile" />
+    <string name="gender" />
+    <string name="dob" />
+    <string name="email" />
+    <string name="name" />
+    <string name="upload_pic_u" />
+
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="580dp"
+            app:srcCompat="@drawable/ic_abc">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView_main_head"
+            android:layout_marginTop="80dp"
+            android:text="to\nTravelodge"
+            android:textAlignment="center"
+            android:layout_below="@+id/imageView_logo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_main_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:text="LOGIN" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView_register"
+            android:layout_marginTop="20dp"
+            android:text="Do you have an account?"
+            android:textAlignment="center"
+            android:layout_below="@+id/button_login"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView_register_link"
+            android:text="@string/register"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:layout_below="@+id/textView_register"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>
