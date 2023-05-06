@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/mainPage"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/viewHeaderBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headerBackgroundHeight"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/headerTitleMargin"
+        android:layout_marginTop="@dimen/headerTitleMargin"
+        android:text="@string/record"
+        android:textColor="@color/white"
+        android:textSize="@dimen/headerTitleSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="@dimen/searchLayout"
+        android:layout_height="@dimen/searchLayout"
+        android:layout_marginEnd="@dimen/searchLayout"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/textTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textTitle"
+        app:tint="@color/white" />
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cardViewLayout"
+        android:layout_marginEnd="@dimen/cardViewLayout"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="@dimen/cardViewLayout"
+        app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/MainCategoryTextSize">
+
+            <TextView
+                android:id="@+id/textViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/categories"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/MainCategoryTextSize"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/moreSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:id="@+id/layoutBeachFront"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/linearMargin"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/layoutImpacted"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/compactLayout"
+                    android:layout_height="@dimen/compactLayout"
+                    android:src="@drawable/as" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/CategoriesLayout"
+                    android:text="@string/beachfront"
+                    android:textColor="#757575"
+                    android:textSize="@dimen/CategoriesTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutImpacted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/linearMargin"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/layoutCabins"
+                app:layout_constraintStart_toEndOf="@id/layoutBeachFront"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/compactLayout"
+                    android:layout_height="@dimen/compactLayout"
+                    android:src="@drawable/ic_pool" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/CategoriesLayout"
+                    android:text="@string/amazing_pool"
+                    android:textColor="#757575"
+                    android:textSize="@dimen/CategoriesTextSize" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutCabins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/linearMargin"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutImpacted"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/compactLayout"
+                    android:layout_height="@dimen/compactLayout"
+                    android:src="@drawable/ic_cabins" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/CategoriesLayout"
+                    android:text="@string/cabins"
+                    android:textColor="#757575"
+                    android:textSize="@dimen/CategoriesTextSize" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="@dimen/cardViewLayout"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/activity_recycler_viewer" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <View
+        android:id="@+id/viewHeaderBackground"
+        android:layout_width="@dimen/headerLayoutWidth"
+        android:layout_height="@dimen/headerLayoutHeight"
+        android:background="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/acco1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-5dp" />
+
+    <TextView
+        android:id="@+id/acco1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/headerTitleMargin"
+        android:layout_marginTop="@dimen/headerTitleMargin"
+        android:text="@string/addAcc"
+        android:textColor="@color/white"
+        android:textSize="@dimen/addAccommodationSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edtLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="237dp"
+        android:textSize="@dimen/accoTextViewSize"
+        android:text="@string/enterLoc"
+        app:layout_constraintBottom_toTopOf="@+id/edtLoco1"
+        app:layout_constraintStart_toStartOf="@+id/edtLoco1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="@dimen/accommodation_add_text_padding"
+        android:paddingBottom="@dimen/accommodation_add_padding_bottom"/>
+
+    <EditText
+        android:id="@+id/edtLoco1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/edtLoco1"
+        android:textSize="@dimen/accoEdtTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/pricePerNight"
+        app:layout_constraintStart_toStartOf="@+id/pricePerNight"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape"/>
+
+    <EditText
+        android:id="@+id/pricePerNight1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginBottom="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/pricePer1"
+        android:textSize="@dimen/accoEdtTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/bookDates"
+        app:layout_constraintStart_toStartOf="@+id/bookDates"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape"/>
+
+    <TextView
+        android:id="@+id/edtImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="444dp"
+        android:layout_marginBottom="14dp"
+        android:textSize="20sp"
+        android:text="@string/addImage"
+        app:layout_constraintBottom_toTopOf="@+id/btnImage"
+        app:layout_constraintStart_toStartOf="@+id/btnImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pricePerNight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="301dp"
+        android:textSize="20sp"
+        android:text="@string/pricePer"
+        app:layout_constraintBottom_toTopOf="@+id/pricePerNight1"
+        app:layout_constraintStart_toStartOf="@+id/pricePerNight1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="@dimen/accommodation_add_text_padding"/>
+
+    <TextView
+        android:id="@+id/bookDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="371dp"
+        android:text="Available for booking"
+        android:textSize= "20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bookDates1"
+        app:layout_constraintStart_toStartOf="@+id/bookDates1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:paddingBottom="@dimen/accommodation_add_padding_bottom"/>
+
+    <EditText
+        android:id="@+id/bookDates1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:hint="@string/bookDate1"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtImage"
+        app:layout_constraintStart_toStartOf="@+id/edtImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnImage"
+        android:layout_width="224dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="477dp"
+        android:layout_marginBottom="58dp"
+        android:text="@string/selectImage"
+        app:layout_constraintBottom_toTopOf="@+id/updateAcco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/updateAcco"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="588dp"
+        android:text="@string/submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/selectImage"
+        android:layout_width="128dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtLoc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackground"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/viewHeaderBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headerBackgroundHeight"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-2dp" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/headerTitleMargin"
+        android:layout_marginTop="@dimen/headerTitleMargin"
+        android:text="@string/lister_page"
+        android:textColor="@color/white"
+        android:textSize="@dimen/headerTitleSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="578dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackground"
+        tools:layout_editor_absoluteX="0dp"
+        android:paddingLeft="@dimen/headerTitleMargin"
+        android:paddingTop="@dimen/headerTitleMargin">
+
+        <include layout="@layout/booking_lister_1" />
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

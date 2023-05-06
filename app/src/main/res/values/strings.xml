@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MAD</string>
+    <string name="record">Homepage</string>
+    <!--    navbar-->
+    <string name="categories">Categories</string>
+    <string name="more">more</string>
+    <string name="beachfront">Beachfronts</string>
+    <string name="amazing_pool">Amazing Pools</string>
+    <string name="cabins">Cabins</string>
+    <!--    rental places details -->
+    <string name="tangalle_sri_lanka">Tangalle, Sri Lanka</string>
+    <string name="km">145 kilometers away</string>
+    <string name="booking">Mar 20–25</string>
+    <string name="price">Rs111,801 night</string>
+    <string name="matara">Matara, Sri Lanka</string>
+    <string name="km1">132 kilometers away</string>
+    <string name="booking1">May 14–19</string>
+    <string name="price1">Rs49,420 night</string>
+    <!--   Details of the person that accommodated the place -->
+    <string name="lister_page">Places Accommodated</string>
+    <string name="cus_name">Customer name : Chathura Perera</string>
+    <string name="booking_more">Booking : Apr 20 – 25</string>
+    <string name="accomodation_more">Accommodation : Matara , Sri Lanka</string>
+    <!--    Adding an accommodation-->
+    <string name="addAcc">Add your accommodation</string>
+    <string name="selectImage">Select an image</string>
+    <string name="accoName">Accommodation Name</string>
+    <string name="accoName1">Enter the name</string>
+    <string name="enterLoc">Enter Location</string>
+    <string name="edtLoco1">Enter the location</string>
+    <string name="pricePer">Price Per Night</string>
+    <string name="pricePer1">Enter Price Per Night</string>
+    <string name="bookDate1">Enter dates for booking</string>
+    <string name="addImage">Add an image</string>
+    <string name="submit">Submit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

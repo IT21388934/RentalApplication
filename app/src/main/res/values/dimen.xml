@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="headerBackgroundHeight">125dp</dimen>
+    <dimen name="headerTitleMargin">16dp</dimen>
+    <dimen name="headerTitleSize">24dp</dimen>
+    <dimen name="searchLayout">31.20dp</dimen>
+    <dimen name="cardViewLayout">19.20dp</dimen>
+    <dimen name="MainCategoryTextSize">16.80dp</dimen>
+    <dimen name="moreSize">14dp</dimen>
+    <dimen name="linearMargin">9.60dp</dimen>
+    <dimen name="compactLayout">33.60dp</dimen>
+    <dimen name="CategoriesLayout">4.80dp</dimen>
+    <dimen name="CategoriesTextSize">12.00dp</dimen>
+    <dimen name="cornerRadius">16dp</dimen>
+    <dimen name="constraintPaddingOverall">14dp</dimen>
+    <dimen name="constraintPaddingLeft">150dp</dimen>
+    <dimen name="bookingPaddingTop">5dp</dimen>
+    <dimen name="addAccommodationSize">20dp</dimen>
+    <dimen name="accommodation_add_padding_bottom">20dp</dimen>
+    <dimen name="accommodation_add_text_padding">6dp</dimen>
+    <dimen name="headerLayoutWidth">421dp</dimen>
+    <dimen name="headerLayoutHeight">93dp</dimen>
+    <dimen name="accoTextViewSize">20dp</dimen>
+    <dimen name="accoEdtTextSize">14dp</dimen>
+
+</resources>
