@@ -21,6 +21,7 @@ class ListerLoginActivity : AppCompatActivity() {
 
         auth= FirebaseAuth.getInstance()
 
+        //session management
         val currentLister = auth.currentUser
         if(currentLister != null){
             startActivity(Intent(this@ListerLoginActivity,ListerProfileActivity::class.java))
@@ -29,7 +30,7 @@ class ListerLoginActivity : AppCompatActivity() {
         listerLogin()
     }
 
-
+//login function
     private fun listerLogin(){
 
         var listerLoginButton = findViewById<Button>(R.id.ListerLoginButton)
@@ -37,6 +38,7 @@ class ListerLoginActivity : AppCompatActivity() {
         var editTxtPassword = findViewById<TextView>(R.id.editTxtPassword)
         val directToListerSignup = findViewById<TextView>(R.id.directToListerSignup)
 
+//validate inputs
         listerLoginButton.setOnClickListener {
             if(TextUtils.isEmpty(edtLoginEmail.text.toString())){
                 edtLoginEmail.error = "Please Enter Name"
@@ -49,10 +51,13 @@ class ListerLoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
+            //authenticate login
             auth.signInWithEmailAndPassword(edtLoginEmail.text.toString(), editTxtPassword.text.toString())
                 .addOnCompleteListener {
                     if(it.isSuccessful){
 
+                        //redirect to the profile
                         startActivity(Intent(this@ListerLoginActivity,ListerProfileActivity::class.java))
                         finish()
 
@@ -63,6 +68,8 @@ class ListerLoginActivity : AppCompatActivity() {
                 }
         }
 
+
+    //redirect to the sign up page
         directToListerSignup.setOnClickListener{
             startActivity(Intent(this@ListerLoginActivity,ListerRegistration::class.java))
 

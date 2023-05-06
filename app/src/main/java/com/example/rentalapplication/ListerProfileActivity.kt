@@ -14,6 +14,8 @@ import org.w3c.dom.Text
 
 class ListerProfileActivity : AppCompatActivity() {
 
+    //declare variables
+
     lateinit var auth:FirebaseAuth
     var databaseReference : DatabaseReference? = null
     var database : FirebaseDatabase? = null
@@ -33,6 +35,7 @@ class ListerProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lister_profile)
 
+        //initialize variables
         txtName=findViewById(R.id.tvListerName)
         txtEmail=findViewById(R.id.tvListerEmail)
         txtPhone=findViewById(R.id.tvListerPhone)
@@ -50,6 +53,8 @@ class ListerProfileActivity : AppCompatActivity() {
 
     }
 
+
+    //retrieve lister data and display
     private fun loadListerProfile(){
 
 
@@ -79,12 +84,15 @@ class ListerProfileActivity : AppCompatActivity() {
             }
         })
 
+
+        //logout
         logout.setOnClickListener{
             auth.signOut()
             startActivity(Intent(this@ListerProfileActivity,ListerLoginActivity::class.java))
             finish()
         }
 
+        //direct to the edit profile
         editProfile.setOnClickListener(){
             startActivity(Intent(this@ListerProfileActivity,UpdateListerProfile::class.java))
             finish()
