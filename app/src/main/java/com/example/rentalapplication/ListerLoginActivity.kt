@@ -3,7 +3,9 @@ package com.example.rentalapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +20,11 @@ class ListerLoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lister_loging)
 
         auth= FirebaseAuth.getInstance()
+
+        val currentLister = auth.currentUser
+        if(currentLister != null){
+            startActivity(Intent(this@ListerLoginActivity,ListerProfileActivity::class.java))
+        }
 
         listerLogin()
     }
@@ -37,7 +44,11 @@ class ListerLoginActivity : AppCompatActivity() {
             }else if(TextUtils.isEmpty(editTxtPassword.text.toString())){
                 editTxtPassword.error="Please enter password"
                 return@setOnClickListener
+            } else if(!Patterns.EMAIL_ADDRESS.matcher(edtLoginEmail.text.toString()).matches()){
+                edtLoginEmail.error="Valid Email is Required!"
+                return@setOnClickListener
             }
+
             auth.signInWithEmailAndPassword(edtLoginEmail.text.toString(), editTxtPassword.text.toString())
                 .addOnCompleteListener {
                     if(it.isSuccessful){

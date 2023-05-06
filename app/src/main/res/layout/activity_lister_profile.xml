@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvListerName" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/listerImg"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="16dp"
@@ -162,7 +162,7 @@
         app:layout_constraintEnd_toStartOf="@+id/viewHeaderBackground"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/viewHeaderBackground"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/listerImg" />
 
     <TextView
         android:id="@+id/tvListerDis"
@@ -234,7 +234,7 @@
             app:srcCompat="@drawable/ic_baseline_add_location_alt_24" />
 
         <ImageView
-            android:id="@+id/editProfile"
+            android:id="@+id/btnEditProfile"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="15dp"

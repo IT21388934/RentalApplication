@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editListerDes" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/listerProfImg"
         android:layout_width="@dimen/default_avatar_width"
         android:layout_height="@dimen/default_avatar_height"
         android:layout_marginTop="16dp"
@@ -33,8 +33,8 @@
         android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintBottom_toBottomOf="@+id/listerProfImg"
+        app:layout_constraintEnd_toEndOf="@+id/listerProfImg"
         app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
     <EditText
@@ -49,7 +49,7 @@
         android:textSize="@dimen/primary_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintTop_toBottomOf="@+id/listerProfImg" />
 
     <EditText
         android:id="@+id/edtListerEmail"
