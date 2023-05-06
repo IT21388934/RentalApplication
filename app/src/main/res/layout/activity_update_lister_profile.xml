@@ -6,15 +6,13 @@
     android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="661dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="415dp"
+        android:layout_height="792dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackgroundLiUpdate"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +32,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editListerDes" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/listerProfImg"
                 android:layout_width="@dimen/default_avatar_width"
                 android:layout_height="@dimen/default_avatar_height"
                 android:layout_marginTop="16dp"
@@ -47,11 +45,11 @@
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/imageView16"
+                android:id="@+id/changeImageBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                app:layout_constraintBottom_toBottomOf="@+id/listerProfImg"
+                app:layout_constraintEnd_toEndOf="@+id/listerProfImg"
                 app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
             <EditText
@@ -63,7 +61,7 @@
                 android:layout_marginRight="@dimen/layout_margin_right"
                 android:hint="@string/edtListerName"
                 android:textSize="@dimen/primary_text"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13"
+                app:layout_constraintTop_toBottomOf="@+id/listerProfImg"
                 tools:layout_editor_absoluteX="16dp" />
 
             <EditText
@@ -120,14 +118,17 @@
                 android:id="@+id/editListerDes"
                 android:layout_width="381dp"
                 android:layout_height="76dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:hint="@string/editListerDes"
                 android:textSize="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/editListerAddress"
-                tools:layout_editor_absoluteX="16dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editListerAddress" />
 
             <Button
-                    android:id="@+id/listerUpdateBtn"
+                android:id="@+id/listerUpdateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"

@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
 
 class ListerProfileActivity : AppCompatActivity() {
@@ -22,6 +24,7 @@ class ListerProfileActivity : AppCompatActivity() {
     lateinit var txtAddress: TextView
     lateinit var txtNic:TextView
     lateinit var txtDes:TextView
+    lateinit var imgProfile:ShapeableImageView
 
     lateinit var editProfile:ImageButton
 
@@ -36,6 +39,7 @@ class ListerProfileActivity : AppCompatActivity() {
         txtAddress=findViewById(R.id.tvListerAddress)
         txtNic=findViewById(R.id.tvListerNIC)
         txtDes=findViewById(R.id.tvListerDis)
+        imgProfile=findViewById<ShapeableImageView>(R.id.listerImg)
 
 
         auth = FirebaseAuth.getInstance()
@@ -63,6 +67,11 @@ class ListerProfileActivity : AppCompatActivity() {
                 txtAddress.text = snapshot.child("address").value.toString()
                 txtPhone.text =snapshot.child("phone").value.toString()
                 txtDes.text = snapshot.child("description").value.toString()
+
+                val profileImageUrl = snapshot.child("profileImageUrl").value.toString()
+                if (profileImageUrl.isNotEmpty()) {
+                    Picasso.get().load(profileImageUrl).into(imgProfile)
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

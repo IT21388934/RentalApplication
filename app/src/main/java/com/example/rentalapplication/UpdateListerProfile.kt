@@ -1,15 +1,21 @@
 package com.example.rentalapplication
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.*
+import com.bumptech.glide.Glide
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 
 
 class UpdateListerProfile : AppCompatActivity() {
+
 
     lateinit var auth:FirebaseAuth
     var databaseReference : DatabaseReference? = null
@@ -21,6 +27,11 @@ class UpdateListerProfile : AppCompatActivity() {
     lateinit var txtAddress: TextView
     lateinit var txtNic: TextView
     lateinit var txtDescription:TextView
+    lateinit var imgProfile:ShapeableImageView
+
+    val IMAGE_PICK_REQUEST_CODE = 1
+
+
 
 
 
@@ -33,7 +44,8 @@ class UpdateListerProfile : AppCompatActivity() {
         txtPhone=findViewById(R.id.editListerPhone)
         txtAddress=findViewById(R.id.editListerAddress)
         txtNic=findViewById(R.id.editListerNic)
-        txtDescription=findViewById(R.id.editListerNic)
+        txtDescription=findViewById(R.id.editListerDes)
+        imgProfile=findViewById(R.id.listerProfImg)
 
 
 
@@ -53,6 +65,13 @@ class UpdateListerProfile : AppCompatActivity() {
             startActivity(Intent(this@UpdateListerProfile,ListerProfileActivity::class.java))
             finish()
         }
+
+        imgProfile.setOnClickListener(){
+            chooseProfile()
+        }
+
+
+
     }
 
     fun getprofileData(){
@@ -70,6 +89,12 @@ class UpdateListerProfile : AppCompatActivity() {
                 txtAddress.text = snapshot.child("address").value.toString()
                 txtPhone.text =snapshot.child("phone").value.toString()
                 txtDescription.text =snapshot.child("description").value.toString()
+
+                val profileImageUrl = snapshot.child("profileImageUrl").value.toString()
+                if (profileImageUrl.isNotEmpty()) {
+                    Picasso.get().load(profileImageUrl).into(imgProfile)
+                }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -114,6 +139,65 @@ class UpdateListerProfile : AppCompatActivity() {
         startActivity(Intent(this@UpdateListerProfile,ListerProfileActivity::class.java))
         finish()
 
+    }
+
+    private fun chooseProfile() {
+
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE)
+
+        startActivityForResult(Intent.createChooser(intent,"Select Image"),IMAGE_PICK_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IMAGE_PICK_REQUEST_CODE && resultCode == RESULT_OK) {
+            val imageUri = data?.data
+            // Upload the image to Firebase Storage
+            if (imageUri != null) {
+                uploadImage(imageUri)
+            }
+        }
+    }
+
+    //
+    private fun uploadImage(imageUri: Uri?) {
+        if (imageUri != null) {
+            // Create a reference to the location where the image will be stored
+            val storage = FirebaseStorage.getInstance()
+            val imageRef = storage.reference.child("${FirebaseAuth.getInstance().currentUser?.uid}.jpg")
+            // Upload the image to Firebase Storage
+            val uploadTask = imageRef.putFile(imageUri)
+            uploadTask.continueWithTask { task ->
+                if (!task.isSuccessful) {
+                    task.exception?.let { throw it }
+                }
+                // Continue with the task to get the download URL
+                imageRef.downloadUrl
+            }.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Store the download URL in Firebase Realtime Database
+                    val imageUrl = task.result.toString()
+                    val userId = FirebaseAuth.getInstance().currentUser?.uid
+                    // Set the profile image in the ImageView
+                    val profilePic= findViewById<ShapeableImageView>(R.id.listerProfImg)
+                    Glide.with(this).load(imageUrl).into(profilePic)
+
+                    if (userId != null) {
+                        FirebaseDatabase.getInstance().reference.child("lister").child(userId).child("profileImageUrl").setValue(imageUrl)
+                    }
+
+
+                    Toast.makeText(this, "Profile Picture updated successfully", Toast.LENGTH_SHORT).show()
+                } else {
+                    // Handle errors
+                    Toast.makeText(this, "Failed to upload image", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            Toast.makeText(this, "No image selected", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
