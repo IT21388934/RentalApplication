@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">mad final</string>
+    //Booking Page
+    <string name="Resort_Name">Lodge Villa Resort</string>
+    <string name="Resort_Name2">Golden Resort</string>
+    <string name="heading">BOOK YOUR TRIP</string>
+    <string name="book">BOOK NOW</string>
+    <string name="chechIn">CHECK-IN</string>
+    <string name="checkOut">CHECK-OUT</string>
+    <string name="guests">GUESTS</string>
+    <string name="chechInValue">03/04/2023</string>
+    <string name="chechOutValue">06/04/2023</string>
+    <string name="guestValue">2</string>
+    <string name="dayPrice">Rs10000.00 X 3 nights</string>
+    <string name="dayPrice2">Rs20000.00 X 5 nights</string>
+    <string name="fullPrice">Rs30000.00</string>
+    <string name="fullPrice2">Rs150000.00</string>
+    <string name="bookedTopic">YOUR BOOKED LIST</string>
+    <string name="bookingID1">Booking ID: 00112345</string>
+    <string name="bookingID2">Booking ID: 00144545</string>
+    <string name="price">Rs20000.00</string>
+    //edit page
+    <string name="editdayPrice2">Rs20000.00 X 6 nights</string>
+    <string name="editedfullPrice2">Rs120000.00</string>
+    <string name="editchechInValue">02/04/2023</string>
+    <string name="editchechOutValue">07/04/2023</string>
+    <string name="save">SAVE CHANGES</string>
+    <string name="editeBook">EDIT YOUR BOOKING DETAILS</string>
+</resources>
+

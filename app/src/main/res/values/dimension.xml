@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_text">20sp</dimen>
+    <dimen name="button_text">16sp</dimen>
+    <dimen name="main_text">20sp</dimen>
+    <dimen name="sub_text">16sp</dimen>
+
+    <dimen name="icon_width">30dp</dimen>
+    <dimen name="icon_height">30dp</dimen>
+
+    <dimen name="background_card_width">0dp</dimen>
+    <dimen name="background_card_height">220dp</dimen>
+    <dimen name="layout_margin_right">8dp</dimen>
+    <dimen name="layout_margin_left">8dp</dimen>
+
+    <dimen name="image_height">135dp</dimen>
+    <dimen name="image_width">175dp</dimen>
+
+    <dimen name="header_width">0dp</dimen>
+    <dimen name="header_height">100dp</dimen>
+    <dimen name="header_icon_width">40dp</dimen>
+    <dimen name="header_icon_height">40dp</dimen>
+</resources>

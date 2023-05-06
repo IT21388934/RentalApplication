@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/etCheckIn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/background"
+        android:paddingStart="20dp"
+        android:elevation="5dp"
+        android:drawableStart="@drawable/cal"
+        android:drawablePadding="10dp"
+        android:hint="Check In Date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCheckOut"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/background"
+        android:paddingStart="20dp"
+        android:elevation="5dp"
+        android:drawableStart="@drawable/cal"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Check Out Date" />
+
+    <EditText
+        android:id="@+id/etGuests"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/background"
+        android:paddingStart="20dp"
+        android:elevation="5dp"
+        android:drawableStart="@drawable/guests"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Number of Guests"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnUpdateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/btnBlue"
+        android:fontFamily="sans-serif-medium"
+        android:text="Update Data" />
+
+
+</LinearLayout>
