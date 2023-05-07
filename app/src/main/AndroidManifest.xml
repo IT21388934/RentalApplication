@@ -36,10 +36,14 @@
 
 
 
+
+
         </activity>
         <activity
-            android:name=".act1"
+            android:name=".CreateAcco"
             android:exported="true">
+
+
 
 
 
@@ -54,6 +58,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
 
 
         </activity>

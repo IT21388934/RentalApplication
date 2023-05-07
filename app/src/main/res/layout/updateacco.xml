@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/headerTitleMargin"
         android:layout_marginTop="@dimen/headerTitleMargin"
-        android:text="@string/addAcc"
+        android:text="Update Your Accommodation"
         android:textColor="@color/white"
         android:textSize="@dimen/addAccommodationSize"
         android:textStyle="bold"
