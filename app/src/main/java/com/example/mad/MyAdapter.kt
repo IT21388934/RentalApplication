@@ -80,6 +80,7 @@ class MyAdapter(private val accList: ArrayList<Accs>) : RecyclerView.Adapter<MyA
 
                     return@setOnLongClickListener true
 
+
                 }
 
 

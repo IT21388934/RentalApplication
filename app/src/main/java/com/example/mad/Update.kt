@@ -47,7 +47,7 @@ class Update : AppCompatActivity(){
 
     private fun updateData(locName : String , locPrice : String , locDates : String){
 
-        database = FirebaseDatabase.getInstance().getReference("Accommodations")
+        database = FirebaseDatabase.getInstance().getReference().child("Accommodations")
 
         val acc = mapOf<String , String>(
 
