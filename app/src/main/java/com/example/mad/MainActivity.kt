@@ -1,5 +1,6 @@
 package com.example.mad
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -35,7 +36,32 @@ class MainActivity : AppCompatActivity() {
                         accList.add(acco!!)
 
                     }
-                    recyclerView.adapter = MyAdapter(accList)
+
+                    val mAdapter  = MyAdapter(accList)
+                    recyclerView.adapter = mAdapter
+
+                    mAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener{
+                        override fun onItemClick(position: Int) {
+
+                            val intent = Intent(this@MainActivity , Update::class.java)
+
+                            //put extras
+
+                            intent.putExtra("accId" , accList[position].accId)
+                            intent.putExtra("locoName" , accList[position].locsName)
+                            intent.putExtra("accDate" , accList[position].accosDate)
+                            intent.putExtra("accPrice" , accList[position].accosPrice)
+                            startActivity(intent)
+
+
+
+
+
+                        }
+
+
+                    })
+
                 }
             }
 

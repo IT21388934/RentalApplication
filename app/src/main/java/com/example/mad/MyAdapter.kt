@@ -19,15 +19,29 @@ import com.squareup.picasso.Picasso
 class MyAdapter(private val accList: ArrayList<Accs>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
+    private lateinit var mListener : OnItemClickListener
 
-        override fun onCreateViewHolder(parent : ViewGroup , viewType : Int ) : MyAdapter.MyViewHolder{
+    interface OnItemClickListener{
+
+        fun onItemClick(position: Int)
+
+    }
+
+    fun setOnItemClickListener(clickListener: OnItemClickListener){
+
+        mListener = clickListener
+
+    }
+
+
+    override fun onCreateViewHolder(parent : ViewGroup , viewType : Int ) : MyAdapter.MyViewHolder{
 
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.mainpage_place_1 ,
-        parent , false)
+            parent , false)
 
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView , mListener)
 
-        }
+    }
 
 
     override fun onBindViewHolder(holder : MyViewHolder , position : Int){
@@ -46,42 +60,42 @@ class MyAdapter(private val accList: ArrayList<Accs>) : RecyclerView.Adapter<MyA
 
 
 
-                image.setOnLongClickListener{
+            container.setOnLongClickListener{
 
-                    MaterialAlertDialogBuilder(holder.itemView.context)
-                        .setTitle("Delete Item permanently")
-                        .setMessage("Are sure you want to delete this item ?")
-                        .setPositiveButton("Yes"){_,_ ->
+                MaterialAlertDialogBuilder(holder.itemView.context)
+                    .setTitle("Delete Item permanently")
+                    .setMessage("Are sure you want to delete this item ?")
+                    .setPositiveButton("Yes"){_,_ ->
 
-                            val firebaseRef = FirebaseDatabase.getInstance().getReference("Accommodations")
-                            val storageRef = FirebaseStorage.getInstance().getReference("Images")
-                            storageRef.child(acc.accId.toString()).delete()
+                        val firebaseRef = FirebaseDatabase.getInstance().getReference("Accommodations")
+                        val storageRef = FirebaseStorage.getInstance().getReference("Images")
+                        storageRef.child(acc.accId.toString()).delete()
 
-                            firebaseRef.child(acc.accId.toString()).removeValue()
-                                .addOnSuccessListener {
+                        firebaseRef.child(acc.accId.toString()).removeValue()
+                            .addOnSuccessListener {
 
-                                    Toast.makeText(holder.itemView.context , "Item removed Successfully" , Toast.LENGTH_SHORT).show()
+                                Toast.makeText(holder.itemView.context , "Item removed Successfully" , Toast.LENGTH_SHORT).show()
 
-                                }
-                                .addOnFailureListener{ error ->
+                            }
+                            .addOnFailureListener{ error ->
 
-                                    Toast.makeText(holder.itemView.context , "error ${error.message}" , Toast.LENGTH_SHORT).show()
+                                Toast.makeText(holder.itemView.context , "error ${error.message}" , Toast.LENGTH_SHORT).show()
 
-                                }
-
-
-                        }
-                        .setNegativeButton("No"){_,_ ->
-
-                            Toast.makeText(holder.itemView.context , "Cancelled" , Toast.LENGTH_SHORT).show()
-
-                        }
-                        .show()
-
-                    return@setOnLongClickListener true
+                            }
 
 
-                }
+                    }
+                    .setNegativeButton("No"){_,_ ->
+
+                        Toast.makeText(holder.itemView.context , "Cancelled" , Toast.LENGTH_SHORT).show()
+
+                    }
+                    .show()
+
+                return@setOnLongClickListener true
+
+
+            }
 
 
         }
@@ -99,13 +113,24 @@ class MyAdapter(private val accList: ArrayList<Accs>) : RecyclerView.Adapter<MyA
         return accList.size
     }
 
-    public class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    public class MyViewHolder(itemView : View , clickListener: OnItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         val container : ConstraintLayout = itemView.findViewById(R.id.place1)
         val image:ImageView = itemView.findViewById(R.id.img1)
         val locationName : TextView = itemView.findViewById(R.id.tvLoc)
         val dates : TextView = itemView.findViewById(R.id.tvDates)
         val price : TextView = itemView.findViewById(R.id.tvPrice)
+
+
+        init {
+
+            itemView.setOnClickListener {
+
+                clickListener.onItemClick(adapterPosition)
+
+            }
+
+        }
 
 
     }

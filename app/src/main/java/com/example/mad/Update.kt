@@ -1,78 +1,125 @@
 package com.example.mad
 
 import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
 
-class Update : AppCompatActivity(){
+class Update : AppCompatActivity() {
 
-    private lateinit var locationName : EditText
-    private lateinit var locationPrice : EditText
-    private lateinit var locationDataes : EditText
-    private lateinit var database : DatabaseReference
-    private lateinit var updateButton : Button
-    private lateinit var acc : Accs
+    private lateinit var tvLocName : TextView
+    private lateinit var tvLocPrice : TextView
+    private lateinit var tvLocDate : TextView
+    private lateinit var btnUpdate : Button
+
 
     @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState : Bundle?){
-
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.updateacco)
+        setContentView(R.layout.update)
 
-        locationName = findViewById(R.id.edtLoco1)
-        locationPrice = findViewById(R.id.pricePerNight1)
-        locationDataes = findViewById(R.id.bookDates1)
-        updateButton = findViewById(R.id.updateAcco)
+        tvLocName = findViewById(R.id.locName)
+        tvLocPrice = findViewById(R.id.locPrice)
+        tvLocDate = findViewById(R.id.locDate)
+        btnUpdate = findViewById(R.id.changes)
+
+        btnUpdate.setOnClickListener{
+
+            openUpdateDialog(
+
+                intent.getStringExtra("accId").toString() ,
+                intent.getStringExtra("locoName").toString()
+
+
+            )
+
+        }
+
+        setValuesToViews()
+
+
+
+    }
+
+    private fun openUpdateDialog(
+
+        accId : String ,
+        locoName : String
+
+    ){
+
+        val mDialog = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val mDialogView = inflater.inflate(R.layout.dialogupdate , null)
+
+        mDialog.setView(mDialogView)
+
+        val etLocName = mDialogView.findViewById<EditText>(R.id.edtLocoName)
+        val etLocPrice = mDialogView.findViewById<EditText>(R.id.edtPrice)
+        val etLocDate = mDialogView.findViewById<EditText>(R.id.edtDates)
+        val updateButton = mDialogView.findViewById<Button>(R.id.updateBtn)
+
+        etLocName.setText(intent.getStringExtra("locoName").toString())
+        etLocPrice.setText(intent.getStringExtra("accPrice").toString())
+        etLocDate.setText(intent.getStringExtra("accDate").toString())
+
+        mDialog.setTitle("Updating $locoName Record")
+
+        val alertDialog = mDialog.create()
+        alertDialog.show()
 
         updateButton.setOnClickListener{
 
+            updateAccData(
 
+                accId,
+                etLocName.text.toString(),
+                etLocPrice.text.toString(),
+                etLocDate.text.toString()
 
-            val locName = locationName.text.toString()
-            val locPrice = locationPrice.text.toString()
-            val locDates = locationDataes.text.toString()
+            )
 
-            updateData(locName , locPrice , locDates)
+            Toast.makeText(applicationContext , "Accommodation Data Updateed" , Toast.LENGTH_LONG).show()
 
-        }
+            //set updated data to txtView
+            tvLocName.text = etLocName.text.toString()
+            tvLocPrice.text = etLocPrice.text.toString()
+            tvLocDate.text = etLocDate.text.toString()
 
-    }
-
-
-
-    private fun updateData(locName : String , locPrice : String , locDates : String){
-
-        database = FirebaseDatabase.getInstance().getReference().child("Accommodations")
-
-        val acc = mapOf<String , String>(
-
-            "locName" to locName,
-            "locPrice" to locPrice ,
-            "locDates" to locDates
-
-        )
-
-        database.updateChildren(acc).addOnSuccessListener {
-
-            locationName.text.clear()
-            locationPrice.text.clear()
-            locationDataes.text.clear()
-            Toast.makeText(this , "Successfully Updated" , Toast.LENGTH_SHORT).show()
-
-        }.addOnFailureListener{
-
-            Toast.makeText(this , "Failed To Update" , Toast.LENGTH_SHORT).show()
+            alertDialog.dismiss()
 
         }
 
+
+
     }
 
+    private fun updateAccData(
+
+        id : String,
+        locName : String ,
+        locPrice : String ,
+        locDate : String
+    ){
+
+        val dbRef = FirebaseDatabase.getInstance().getReference("Accommodations").child(id)
+        val accInfo = Accs(id , locName , locPrice , locDate )
+        dbRef.setValue(accInfo)
+
+    }
+
+    private fun setValuesToViews(){
+
+        tvLocName.text = intent.getStringExtra("locoName")
+        tvLocPrice.text = intent.getStringExtra("accPrice")
+        tvLocDate.text = intent.getStringExtra("accDate")
 
 
 
+    }
 }

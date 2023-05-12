@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/edtLoc"
+        android:id="@+id/tvLoc1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="237dp"
@@ -55,8 +55,8 @@
         android:inputType="textPersonName"
         android:hint="@string/edtLoco1"
         android:textSize="@dimen/accoEdtTextSize"
-        app:layout_constraintBottom_toTopOf="@+id/pricePerNight"
-        app:layout_constraintStart_toStartOf="@+id/pricePerNight"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrice1"
+        app:layout_constraintStart_toStartOf="@+id/tvPrice1"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shape"/>
 
@@ -70,8 +70,8 @@
         android:inputType="textPersonName"
         android:hint="@string/pricePer1"
         android:textSize="@dimen/accoEdtTextSize"
-        app:layout_constraintBottom_toTopOf="@+id/bookDates"
-        app:layout_constraintStart_toStartOf="@+id/bookDates"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate1"
+        app:layout_constraintStart_toStartOf="@+id/tvDate1"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shape"/>
 
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/pricePerNight"
+        android:id="@+id/tvPrice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="301dp"
@@ -101,7 +101,7 @@
         android:paddingBottom="@dimen/accommodation_add_text_padding"/>
 
     <TextView
-        android:id="@+id/bookDates"
+        android:id="@+id/tvDate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="371dp"
@@ -158,7 +158,7 @@
         android:layout_width="128dp"
         android:layout_height="111dp"
         android:layout_marginTop="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtLoc"
+        app:layout_constraintBottom_toTopOf="@+id/tvLoc1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackground"

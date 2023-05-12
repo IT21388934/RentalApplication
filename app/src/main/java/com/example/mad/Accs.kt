@@ -8,7 +8,7 @@ data class Accs(
     var locsName: String? = null,
     var accosPrice: String? = null,
     var accosDate: String? = null,
-    var imageUri:String? = null
+    var imageUri:String?= null
 
 
 
